@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/math")
 public class MathController {
 
-    @GetMapping("/math")
+    @GetMapping("")
     public String welcomeMath(){
         return "Welcome to the math controller";
     }
 
-    @GetMapping("/math/division-info")
+    @GetMapping("/division-info")
     public ArithmeticOperation divisionInfo(){
         ArithmeticOperation division = new ArithmeticOperation();
         division.setName("division");
@@ -22,12 +22,12 @@ public class MathController {
         return division;
     }
 
-    @GetMapping("/math/multiplication")
+    @GetMapping("/multiplication")
     public Integer multiplication(@RequestParam int x, @RequestParam int y){
         return x * y;
     }
 
-    @GetMapping("/math/square/{n}")
+    @GetMapping("/square/{n}")
     public Integer square(@PathVariable int n) {
         return n * n;
     }
